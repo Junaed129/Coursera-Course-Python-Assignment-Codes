@@ -1,0 +1,116 @@
+# Write a Program to prompt the user for hours and rate per hour using input to compute gross pay.\
+hrs = input("Enter Hours: ")
+rate = input("Enter rates: ")
+pay = float(hrs)*float(rate)
+print("You have to pay:",pay,"Tk")
+
+# Assignment 2.3
+#Write a Program for pay computation to give the employees 1.5 times the hourly rate for hours worked above 40 hours.
+hrs = float(input("Enter Hours: "))
+rate = float(input("Enter rates: "))
+pay = (hrs<=40)*hrs*rate+(hrs>40)*(40*rate+(hrs-40)*rate*1.5)
+print("You have to pay:",pay,"Tk")
+
+
+# Assignment 3.1
+# Write a Program for pay computation to give the employees 1.5 times the hourly rate for hours worked above 40 hours.
+# Use add and except so that the program handles non-numeric input gracefully by printing a message and exiting the program.
+hrs = input("Enter Hours: ")
+rate = input("Enter rates: ")
+try:
+    f_hrs = float(hrs)
+    f_rate = float(rate)
+except:
+    print("Error, please enter numeric input")
+    quit()
+if  f_hrs > 40:
+    pay1 = 40 * f_rate+(f_hrs-40)* f_rate*1.5
+else:
+    pay1 = f_hrs * f_rate
+print("You have to pay:",pay1,"Tk")
+
+
+# Assignment 3.3
+#Write a program to prompt for a score between 0.0 and 1.0. If the score is out of range, print an error. If the score is between 0.0 and 1.0, 
+#print a grade using the following table: Score Grade >= 0.9 A ; >= 0.8 B ; >= 0.7 C ; >= 0.6 D ;  < 0.6 F
+#If the user enters a value out of range, print a suitable error message and exit. For the test, enter a score of 0.85.
+score = float(input("Enter Score: "))
+if(score>1.0):
+    print ("out of range")   
+elif score >= 0.9:
+    Grade = "A"
+elif score >= 0.8:
+    Grade = "B"
+elif score >= 0.7:
+    Grade = "C"
+elif score >= 0.6:
+    Grade = "D"
+elif score < 0.6:
+    Grade = "F"
+print("Your Grade is :", Grade)
+
+
+# Assignment 4.6
+#Write a function for the following program for pay computation to give the employees 1.5 times the hourly rate 
+#for hours worked above 40 hours.Use add and except so that the program handles non-numeric input gracefully 
+#by printing a message and exiting the program.
+def compute_pay(hours,rate):
+    try:
+        f_hrs = float(hrs)
+        f_rate = float(rate)
+    except:
+        print("Error, please enter numeric input")
+        quit()
+    if  f_hrs > 40:
+        pay = 40 * f_rate+(f_hrs-40)* f_rate*1.5
+    else:
+        pay = f_hrs * f_rate
+    return pay
+
+hrs = input("Enter Hours: ")
+rate = input("Enter rates: ")
+pay = compute_pay(hrs,rate)
+print("You have to pay:",pay,"Tk")
+
+# Assignment 5.1
+# Write a program which repeatedly reads numbers until the users enters "done". Once done is entered 
+#print out the total , count and average of the numbers. If users enter anything else other than a number , 
+#detect their mistake and print an error message and skip to the next number.
+
+total = 0
+count = 0
+average = 0
+while True:
+    number = input("Enter a number: ")
+    if number == "done": 
+        break
+    try:
+        num = float(number)
+        total = total+num 
+        count=count+1
+        average = total/count
+    except:
+        print("Invalid Input")
+print("Total:",total)
+print("Count:",count)
+print("Average:",average)
+
+
+# Assignment 5.2
+# Write a program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers.
+max_num = 0
+min_num = 0
+while True:
+    number = input("Enter a number: ")
+    if number == "done": 
+        break
+    try:
+        num = float(number)
+        if num > max_num:
+            max_num = num
+        else:
+             continue
+    except:
+        print("Invalid Input")       
+print("Maximum:",max_num)
+#print("Minimum:",min_num)
