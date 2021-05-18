@@ -99,18 +99,26 @@ print("Average:",average)
 # Assignment 5.2
 # Write a program that prompts for a list of numbers as above and at the end prints out both the maximum and minimum of the numbers.
 max_num = 0
-min_num = 0
+min_num = 100000
 while True:
     number = input("Enter a number: ")
     if number == "done": 
         break
     try:
         num = float(number)
+        num1 = num
         if num > max_num:
             max_num = num
         else:
-             continue
+             continue  
+                
+        if num1 < min_num:
+            min_num = num1
+        else:
+            continue    
+            
     except:
-        print("Invalid Input")       
+        print("Invalid Input")
+        
 print("Maximum:",max_num)
-#print("Minimum:",min_num)
+print("Minimum:",min_num)
