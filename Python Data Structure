@@ -11,3 +11,19 @@ inp = fh.read()
 upper_inp=inp.upper()
 print(upper_inp.rstrip())
 
+#Assignment 7.2
+# Use the file name mbox-short.txt as the file name
+fname = input("Enter file name: ")
+fh = open(fname)
+s=0;
+c = 0
+for line in fh:
+    if not line.startswith("X-DSPAM-Confidence:"):
+        continue
+    c=c+1
+    pos=line.find('0')
+    n=line[pos:]
+    s=s+float(n)
+avg = s/c
+    
+print("Average spam confidence:",avg)
