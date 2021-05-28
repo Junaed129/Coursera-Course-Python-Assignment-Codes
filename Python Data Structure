@@ -2,3 +2,12 @@
 text = "X-DSPAM-Confidence: 0.8475"
 pos=text.find(':')
 print(float(text[pos+2:]))
+
+#Assignment 7.1
+# Use words.txt as the file name
+fname = input("Enter file name: ")
+fh = open(fname)
+inp = fh.read()
+upper_inp=inp.upper()
+print(upper_inp.rstrip())
+
